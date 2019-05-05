@@ -41,13 +41,26 @@ class Visualizer {
     //???WRITE THIS METHOD FIRST!!!
     //THESE ARE WRONG: They just illustrate how they could look
     int spacing = 0;
+    
     for (int i = 0; i < values.length; i++){
-      if (values[i] >= 0){
-        fill(145,54,94);
+      if (values[i] <= 100 && values[i] > 50){
+        fill(255,0,0);//red
       }
       else{
-        fill(236,85,27);
+        if (values[i] <= 50 && values[i] > 0){
+          fill(255,150,45);//orange
+        }
+        else{
+          if (values[i] <= 0 && values[i] > -50){
+            fill(255,255,0);//yellow
+          }
+          else{
+              fill(0,255,0);//green
+            }
+        }
       }
+    
+ 
       rect(x+spacing,y+100,40,values[i]);
       spacing += 40;
     }
