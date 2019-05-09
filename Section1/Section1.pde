@@ -13,8 +13,9 @@ class Visualizer {
   Visualizer(float x, float y) {
     this.x = x;
     this.y = y;
-    values = new float[10];
-    speeds = new float[10];
+    int size = (int)random(40);
+    values = new float[size];
+    speeds = new float[size];
     for (int i = 0; i < values.length; i++) {
       values[i] = random(-99, 99);
       speeds[i] = random(2);
@@ -61,8 +62,8 @@ class Visualizer {
       }
     
  
-      rect(x+spacing,y+100,40,values[i]);
-      spacing += 40;
+      rect(x+spacing,y+100,400/values.length,values[i]);
+      spacing += 400/values.length;
     }
     
     //fill(255, 0, 0);
